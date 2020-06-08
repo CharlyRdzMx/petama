@@ -1,0 +1,30 @@
+<GridLayout>
+
+    <ActionBar title="Lista de usuarios">
+        <NavigationButton visibility="collapsed"></NavigationButton>
+    
+        <ActionItem ios.position="left" android.position="left">
+            <GridLayout width="auto">
+                <Button text="Menu" class="fas fa-home" (tap)="onDrawerButtonTap($event)"></Button>
+            </GridLayout>
+        </ActionItem>
+    
+        <ActionItem ios.position="right" android.position="right" [nsRouterLink]="['/users/new']">
+            <Button text="+ NUEVO" ></Button>
+        </ActionItem>
+        
+    </ActionBar>
+    
+    <GridLayout>
+        <ListView [items]="userList">
+            <ng-template let-item="item">
+                <GridLayout columns="190, *" rows="auto, 10, 25">
+                    <Label row="0" col="0" text="{{item.name}} {{item.lastname}}" class="task-title"></Label>
+                    <Label row="1" col="0" [text]="item.email" class="task-description"></Label>
+                    <Label row="2" col="0" [text]="item.role" class="task-description"></Label>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </GridLayout>
+
+</GridLayout>

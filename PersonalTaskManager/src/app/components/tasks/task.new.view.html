@@ -1,0 +1,19 @@
+<ActionBar title="Nueva tarea"></ActionBar>
+
+
+<FlexboxLayout flexDirection="column" style="margin-top: 30; margin-left: 20;">
+    <GridLayout columns="100, *" rows="auto, auto, auto">
+        <Label row="0" col="0" class="field" text="Titulo:"></Label>
+        <TextField row="0" col="1" class="field" [(ngModel)]="task.title"></TextField>
+        <Label row="1" col="0" class="field" text="Descripción:"></Label>
+        <TextView row="1" col="1" class="field" [(ngModel)]="task.description"></TextView>
+        
+    </GridLayout>
+
+    <StackLayout>
+        <Label style="font-size: 16;" text="Fecha limite:"></Label>
+        <DatePicker style="height: 50;" [(ngModel)]="task.deadline"></DatePicker>
+    </StackLayout>
+
+    <Button text="Guardar tarea" (tap)="onSaveChanges($event)" class="-primary"></Button>
+</FlexboxLayout>

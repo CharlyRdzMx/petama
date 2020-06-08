@@ -1,0 +1,14 @@
+
+<StackLayout style="margin-top: 50; margin-left: 50;">
+    <StackLayout orientation="vertical">
+        <Label text="LOGIN DE USUARIO"></Label>
+    </StackLayout>
+
+    <StackLayout>
+        <Label text="Email"></Label>
+        <TextField [(ngModel)]="user.email"></TextField>
+        <Label text="Contraseña:"></Label>
+        <TextField [(ngModel)]="user.password"></TextField>
+        <Button text="Entrar" (tap)="onLogin()"></Button>
+    </StackLayout>
+</StackLayout>

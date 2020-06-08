@@ -1,0 +1,38 @@
+<GridLayout>
+    <ActionBar title="Lista de tareas">
+        <NavigationButton visibility="collapsed"></NavigationButton>
+    
+        <ActionItem ios.position="left" android.position="left">
+            <GridLayout width="auto">
+                <Button text="Menu" class="fas fa-home" (tap)="onDrawerButtonTap($event)"></Button>                
+            </GridLayout>
+        </ActionItem>
+
+        <ActionItem ios.position="right" android.position="right" [nsRouterLink]="['/tasks/new']">
+            <Button text="+ NUEVO" ></Button>
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout>
+        <ListView [items]="taskList">
+            <ng-template let-item="item">
+                <StackLayout>
+                    <Label [nsRouterLink]="['/item', item._id]" [text]="item.title" class="task-title"></Label>
+                    <Label [text]="item.description" class="task-description"></Label>
+
+                    <AbsoluteLayout>
+                        <Label left="1" text="Creado el día:"></Label>
+                        <Label left="101" text="{{item.creationDate | date: 'dd/MM/yyyy'}}"></Label>
+
+                        <Label left="1" top="14" text="Fecha límite:"></Label>
+                        <Label left="101" top="14" text="{{item.deadline | date: 'dd/MM/yyyy'}}"></Label>
+
+                        <Button left="280" top="-10" text="Eliminar" class="task-button" (tap)="onDeleteTask(item)"></Button>
+                    </AbsoluteLayout>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+    </GridLayout>   
+
+</GridLayout>
+

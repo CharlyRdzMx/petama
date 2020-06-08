@@ -1,0 +1,86 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. You can learn more about the 
+NativeScript core theme at https://github.com/nativescript/theme
+The imported CSS rules must precede all other types of rules.
+*/
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/default.css";
+
+.fas {
+    font-family: "Font Awesome 5 Free Solid", "fa-brands-400"
+}
+
+/* Place any CSS rules you want to apply on both iOS and Android here.
+This is where the vast majority of your CSS code goes. */
+
+/*
+The following CSS rule changes the font size of all Buttons that have the
+"-primary" class modifier.
+*/
+Button.-primary {
+    font-size: 18;
+}
+
+.hr-line {
+    background-color: black;
+}
+
+.field{
+    width: 200;
+    font-size: 16;
+}
+
+.field ListPicker{
+    height: 60;
+}
+
+.menu-slice-header{
+    height: 100;
+    background-image: url("https://i.pinimg.com/236x/27/41/98/274198d933a6ba1c23bba5c7106e565e.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin-bottom: 30;
+}
+
+.menu-slice-header label{
+    margin-top: 30;
+    margin-left: 40;
+    font-size: 17;
+    font-weight: bold;
+    color: black
+}
+
+.menu-slice-option{
+    height: 50;
+}
+
+.menu-slice-option label{
+    font-size: 16;
+    margin-left: 30;
+}
+
+.task {
+    height: 30;
+}
+
+.task-title {
+    font-size: 16;
+    font-weight: bold;
+}
+
+.task-description {
+    font-size: 12;
+    color: gray;
+}
+
+.task-button {
+    font-size: 12;
+    border-radius: 10;
+    background-color: rgb(238, 150, 150);
+}

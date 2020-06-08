@@ -1,0 +1,23 @@
+<ActionBar title="Nuevo Usuario"></ActionBar>
+
+
+<FlexboxLayout flexDirection="column" style="margin-top: 30; margin-left: 20;">
+    <GridLayout columns="90, *" rows="auto, auto">
+        <Label row="0" col="0" class="field" text="Nombre:"></Label>
+        <TextField row="0" col="1" class="field" [(ngModel)]="user.name"></TextField>
+        <Label row="1" col="0" class="field" text="Apellido:"></Label>
+        <TextField row="1" col="1" class="field" [(ngModel)]="user.lastname"></TextField>
+    </GridLayout>
+
+    <GridLayout columns="90, *" rows="auto, auto, 70">
+        <Label row="0" col="0" class="field" text="Email:"></Label>
+        <TextField row="0" col="1" class="field" [(ngModel)]="user.email"></TextField>
+        <Label row="1" col="0" class="field" text="Password:"></Label>
+        <TextField row="1" col="1" class="field" [(ngModel)]="user.password"></TextField>
+        <Label row="2" col="0" class="field" text="Rol:"></Label>
+        <ListPicker row="2" col="1" [items]="roleList" (selectedIndexChange)="onSelectedIndexChange($event)"></ListPicker>
+    </GridLayout>
+
+    <Button text="Guardar cambios" (tap)="onSaveChanges($event)" class="-primary"></Button>
+
+</FlexboxLayout>
