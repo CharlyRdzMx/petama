@@ -45,4 +45,10 @@ Pruebas en el proyecto "PersonalTaskManagerAPI".
 
 Para las pruebas de la api, se recomienda el uso del programa POSTMAN, del cual facilitará la depuración.
 
+# Usuarios para pruebas
+
+Administrador
+Usuario: luis.perez@mail.com
+Contraseña: 12345678
+
 
